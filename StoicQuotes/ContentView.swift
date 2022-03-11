@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    let quotes = Bundle.main.decode([Quote].self, from: "quotes.json")
-    @State var item: Quote
+    let quotes: [Quote] = Bundle.main.decode("quotes.json")
+    @State var item = Quote(text: "", author: "")
 
     var body: some View {
         VStack {
@@ -24,13 +24,12 @@ struct ContentView: View {
     }
     
     func loadItem() {
-        item = quotes.randomElement() ?? Quote.example
+        item = quotes.randomElement() ?? Quote(text: "", author: "")
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(item: Quote.example)
-        ContentView(item: Quote.example).preferredColorScheme(.dark)
+        ContentView(item: Quote(text: "This is a test", author: "Test Author")).preferredColorScheme(.dark)
     }
 }

@@ -42,7 +42,7 @@ struct QuoteView: View {
 
 struct QuoteView_Previews: PreviewProvider {
     static var previews: some View {
-        QuoteView(item: Quote.example)
+        QuoteView(item: Quote(text: "This is a test", author: "Test Author"))
             .preferredColorScheme(.dark)
     }
 }

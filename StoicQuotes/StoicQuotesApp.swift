@@ -11,7 +11,7 @@ import SwiftUI
 struct StoicQuotesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(item: Quote.example)
+            ContentView()
                 .preferredColorScheme(/*@START_MENU_TOKEN@*/.dark/*@END_MENU_TOKEN@*/)
         }
     }
